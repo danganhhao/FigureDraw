@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,21 @@ using FigureDraw.Diagram;
 
 namespace FigureDraw
 {
+    public enum ShapeMode
+    {
+        Line,
+        Rectangle, 
+        Ellipse
+    }
+
     public partial class Form1 : Form
     {
         System.Drawing.Graphics g;
         CommonGraphics graphics;
         List<Sharp> shapes = new List<Sharp>();
+        ShapeMode shapeMode;
+        bool isDrawing = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +38,9 @@ namespace FigureDraw
         {
             g = e.Graphics;
             graphics = new GdiPlusGraphic(panel1);
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            for (int i = 0; i < shapes.Count; i++)
+                shapes[i].Draw(graphics);
             //Sharp a = new FcStartBlock(10,10, 150,75);
             //Sharp a = new FcInputBlock(10, 10, 150, 75);
             //Sharp a = new FcOutputBlock(10, 10, 150, 75);
@@ -49,10 +63,65 @@ namespace FigureDraw
 
         private void LineToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Sharp line = new Line(10, 10, 200, 100);
-            shapes.Add(line);
-            line.Draw(graphics);
-            Invalidate();
+            shapeMode = ShapeMode.Line;
         }
+        private void RectangleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            shapeMode = ShapeMode.Rectangle;
+        }
+
+        private void EllipseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            shapeMode = ShapeMode.Ellipse;
+        }
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDrawing = true;
+            switch (shapeMode)
+            {
+                case ShapeMode.Line:
+                    Sharp line = new Line(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
+                    shapes.Add(line);
+                    break;
+                case ShapeMode.Rectangle:
+                    Sharp rectangle = new Rectangle(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
+                    shapes.Add(rectangle);
+                    break;
+                case ShapeMode.Ellipse:
+                    Sharp ellipse = new Ellipse(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
+                    shapes.Add(ellipse);
+                    break;
+            }
+            //line.Draw(graphics);
+            //panel1.Invalidate();
+        }
+
+        private void Panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDrawing)
+            {
+                for (int i = 0; i < shapes.Count; i++)
+                {
+                    if (i == shapes.Count - 1)
+                        shapes[i].sharpInfo.point2 = new MyPoint(e.Location.X, e.Location.Y);
+                }
+                panel1.Invalidate();
+            }
+        }
+
+        private void Panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDrawing = false;
+            for (int i = 0; i < shapes.Count; i++)
+            {
+                if (i == shapes.Count - 1)
+                {
+                    shapes[i].sharpInfo.point2 = new MyPoint(e.Location.X, e.Location.Y);
+                }
+            }
+            panel1.Invalidate();
+        }
+
+        
     }
 }

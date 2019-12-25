@@ -8,7 +8,7 @@ namespace FigureDraw
 {
     abstract class Sharp
     {
-        protected SharpInfo sharpInfo;
+        public SharpInfo sharpInfo;
         public virtual void Draw(CommonGraphics g) { }
     }
 }

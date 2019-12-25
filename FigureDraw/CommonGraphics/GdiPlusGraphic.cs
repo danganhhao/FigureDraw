@@ -35,7 +35,7 @@ namespace FigureDraw
 
         public void DrawRectangle(int x1, int y1, int x2, int y2)
         {
-            g.DrawRectangle(new Pen(Color.Black), x1, y1, x2, y2);
+            g.DrawRectangle(new Pen(Color.Black), x1, y1, (int)Math.Abs(x2 - x1), (int)Math.Abs(y2 - y1));
         }
 
         public void DrawRoundedRectangle(int x1, int y1, int x2, int y2, int radius)
