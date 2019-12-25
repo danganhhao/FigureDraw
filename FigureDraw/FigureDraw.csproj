@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Diagram\AdEndBlock.cs" />
+    <Compile Include="Diagram\AdValidateBlock.cs" />
     <Compile Include="Diagram\AdFactory.cs" />
     <Compile Include="Diagram\AdInputBlock.cs" />
     <Compile Include="Diagram\AdOutputBlock.cs" />
@@ -54,11 +56,15 @@
     <Compile Include="Diagram\Block.cs" />
     <Compile Include="CommonGraphics\CairoGraphic.cs" />
     <Compile Include="CommonGraphics\CommonGraphics.cs" />
+    <Compile Include="Diagram\DfdEndBlock.cs" />
     <Compile Include="Diagram\DfdFactory.cs" />
     <Compile Include="Diagram\DfdInputBlock.cs" />
     <Compile Include="Diagram\DfdOutputBlock.cs" />
     <Compile Include="Diagram\DfdProcessBlock.cs" />
     <Compile Include="Diagram\DfdStartBlock.cs" />
+    <Compile Include="Diagram\FcEndBlock.cs" />
+    <Compile Include="Diagram\FcTransferBlock.cs" />
+    <Compile Include="Diagram\FcValidateBlock.cs" />
     <Compile Include="Diagram\MyDiagram.cs" />
     <Compile Include="Diagram\DiagramFactory.cs" />
     <Compile Include="Diagram\FcFactory.cs" />
@@ -69,7 +75,7 @@
     <Compile Include="DrawArea.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Sharp\Ellipse.cs" />
+    <Compile Include="Shape\Ellipse.cs" />
     <Compile Include="Diagram\EndBlock.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -80,14 +86,14 @@
     <Compile Include="CommonGraphics\GdiPlusBitmapGraphics.cs" />
     <Compile Include="CommonGraphics\GdiPlusGraphic.cs" />
     <Compile Include="Diagram\InputBlock.cs" />
-    <Compile Include="Sharp\Line.cs" />
+    <Compile Include="Shape\Line.cs" />
     <Compile Include="Diagram\OutputBlock.cs" />
     <Compile Include="Diagram\ProcessBlock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sharp\Rectangle.cs" />
-    <Compile Include="Sharp\Sharp.cs" />
-    <Compile Include="Sharp\SharpInfo.cs" />
+    <Compile Include="Shape\Rectangle.cs" />
+    <Compile Include="Shape\Shape.cs" />
+    <Compile Include="Shape\ShapeInfo.cs" />
     <Compile Include="Diagram\StartBlock.cs" />
     <Compile Include="Diagram\TransferBlock.cs" />
     <Compile Include="Diagram\ValidateBlock.cs" />

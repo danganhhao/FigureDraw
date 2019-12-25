@@ -62,6 +62,7 @@ namespace FigureDraw
 
         public void DrawText(int x, int y, string text, float size)
         {
+            size = size == 0 ? 0.01f : size;
             Font drawFont = new Font("Arial", size);
             SolidBrush drawBrush = new SolidBrush(Color.Black);
             StringFormat drawFormat = new StringFormat();

@@ -80,7 +80,7 @@ namespace FigureDraw
             switch (shapeMode)
             {
                 case ShapeMode.Line:
-                    Sharp line = new Line(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
+                    Sharp line = new AdEndBlock(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
                     shapes.Add(line);
                     break;
                 case ShapeMode.Rectangle:
@@ -122,6 +122,11 @@ namespace FigureDraw
             panel1.Invalidate();
         }
 
-        
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            shapes.Clear();
+            panel1.Controls.Clear();
+            panel1.Invalidate();
+        }
     }
 }

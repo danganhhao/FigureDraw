@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FigureDraw
 {
-    class TransferBlock
+    class TransferBlock: Block
     {
     }
 }
