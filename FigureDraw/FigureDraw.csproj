@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Diagram\AdEndBlock.cs" />
+    <Compile Include="Diagram\AdTransferBlock.cs" />
     <Compile Include="Diagram\AdValidateBlock.cs" />
     <Compile Include="Diagram\AdFactory.cs" />
     <Compile Include="Diagram\AdInputBlock.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Diagram\DfdOutputBlock.cs" />
     <Compile Include="Diagram\DfdProcessBlock.cs" />
     <Compile Include="Diagram\DfdStartBlock.cs" />
+    <Compile Include="Diagram\DfdTransferBlock.cs" />
     <Compile Include="Diagram\FcEndBlock.cs" />
     <Compile Include="Diagram\FcTransferBlock.cs" />
     <Compile Include="Diagram\FcValidateBlock.cs" />
@@ -86,7 +88,7 @@
     <Compile Include="CommonGraphics\GdiPlusBitmapGraphics.cs" />
     <Compile Include="CommonGraphics\GdiPlusGraphic.cs" />
     <Compile Include="Diagram\InputBlock.cs" />
-    <Compile Include="Shape\Line.cs" />
+    <Compile Include="Diagram\Line.cs" />
     <Compile Include="Diagram\OutputBlock.cs" />
     <Compile Include="Diagram\ProcessBlock.cs" />
     <Compile Include="Program.cs" />

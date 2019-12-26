@@ -10,7 +10,7 @@ namespace FigureDraw.Diagram
     {
         public override EndBlock CreateEndBlock(SharpInfo sharpInfo)
         {
-            return base.CreateEndBlock(sharpInfo);
+            return new DfdEndBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
         }
 
         public override InputBlock CreateInputBlock(SharpInfo sharpInfo)
@@ -35,7 +35,7 @@ namespace FigureDraw.Diagram
 
         public override TransferBlock CreateTransferBlock(SharpInfo sharpInfo)
         {
-            return base.CreateTransferBlock(sharpInfo);
+            return new DfdTransferBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
         }
 
         public override ValidateBlock CreateValidateBlock(SharpInfo sharpInfo)

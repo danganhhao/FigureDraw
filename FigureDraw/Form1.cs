@@ -37,7 +37,7 @@ namespace FigureDraw
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics;
-            graphics = new GdiPlusGraphic(panel1);
+            graphics = new GdiPlusBitmapGraphics(panel1);
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             for (int i = 0; i < shapes.Count; i++)
                 shapes[i].Draw(graphics);
@@ -46,9 +46,9 @@ namespace FigureDraw
             //Sharp a = new FcOutputBlock(10, 10, 150, 75);
             //Sharp a = new DfdInputBlock(10, 10, 150, 75);
             //Sharp a = new AdProcessBlock(10, 10, 150, 75);
-            //MyDiagram diagram = new MyDiagram(new DfdFactory());
-            //diagram.CreateDiagram();
-            //diagram.Draw(graphics);
+            MyDiagram diagram = new MyDiagram(new AdFactory());
+            diagram.CreateDiagram();
+            diagram.Draw(graphics);
 
 
 
@@ -80,7 +80,7 @@ namespace FigureDraw
             switch (shapeMode)
             {
                 case ShapeMode.Line:
-                    Sharp line = new AdEndBlock(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
+                    Sharp line = new AdTransferBlock(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
                     shapes.Add(line);
                     break;
                 case ShapeMode.Rectangle:
