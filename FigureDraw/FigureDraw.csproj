@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonGraphics\GdiPlusGifGraphics.cs" />
+    <Compile Include="CommonGraphics\GdiPlusJpegGraphics.cs" />
+    <Compile Include="CommonGraphics\GdiPlusPngGraphics.cs" />
     <Compile Include="Diagram\AdEndBlock.cs" />
     <Compile Include="Diagram\AdTransferBlock.cs" />
     <Compile Include="Diagram\AdValidateBlock.cs" />

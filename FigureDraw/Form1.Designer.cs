@@ -48,6 +48,9 @@
             this.clear = new System.Windows.Forms.Button();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitmapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gifToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jpegToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -210,7 +213,10 @@
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bitmapToolStripMenuItem});
+            this.bitmapToolStripMenuItem,
+            this.pngToolStripMenuItem,
+            this.gifToolStripMenuItem,
+            this.jpegToolStripMenuItem});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.exportToolStripMenuItem.Text = "Export";
@@ -221,6 +227,27 @@
             this.bitmapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bitmapToolStripMenuItem.Text = "Bitmap";
             this.bitmapToolStripMenuItem.Click += new System.EventHandler(this.BitmapToolStripMenuItem_Click);
+            // 
+            // pngToolStripMenuItem
+            // 
+            this.pngToolStripMenuItem.Name = "pngToolStripMenuItem";
+            this.pngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pngToolStripMenuItem.Text = "Png";
+            this.pngToolStripMenuItem.Click += new System.EventHandler(this.PngToolStripMenuItem_Click);
+            // 
+            // gifToolStripMenuItem
+            // 
+            this.gifToolStripMenuItem.Name = "gifToolStripMenuItem";
+            this.gifToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gifToolStripMenuItem.Text = "Gif";
+            this.gifToolStripMenuItem.Click += new System.EventHandler(this.GifToolStripMenuItem_Click);
+            // 
+            // jpegToolStripMenuItem
+            // 
+            this.jpegToolStripMenuItem.Name = "jpegToolStripMenuItem";
+            this.jpegToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jpegToolStripMenuItem.Text = "Jpeg";
+            this.jpegToolStripMenuItem.Click += new System.EventHandler(this.JpegToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -266,6 +293,9 @@
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bitmapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gifToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jpegToolStripMenuItem;
     }
 }
 

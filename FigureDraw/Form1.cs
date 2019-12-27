@@ -133,16 +133,53 @@ namespace FigureDraw
         {
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.InitialDirectory = "d:\\";
-            saveFile.Filter = "Bitmap Image (.bmp)|*.bmp|JPEG Image (.jpeg)|*.jpeg|Png Image (.png)|*.png|All files (*.*)|*.*";
+            // Bitmap Image (.bmp)|*.bmp|JPEG Image (.jpeg)|*.jpeg|Png Image (.png)|*.png|
+            saveFile.Filter = "All files (*.*)|*.*";
             saveFile.FilterIndex = 2;
             saveFile.RestoreDirectory = true;
-            saveFile.FileName = ".bmp";
             return saveFile;
         }
 
         private void BitmapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFile = GetUrl();
+            saveFile.FileName = ".bmp";
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                File.Create(saveFile.FileName).Close();
+                graphics = new GdiPlusBitmapGraphics(panel1);
+                graphics.Export(shapes, saveFile.FileName);
+            }
+        }
+
+        private void PngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = GetUrl();
+            saveFile.FileName = ".png";
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                File.Create(saveFile.FileName).Close();
+                graphics = new GdiPlusPngGraphics(panel1);
+                graphics.Export(shapes, saveFile.FileName);
+            }
+        }
+
+        private void GifToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = GetUrl();
+            saveFile.FileName = ".gif";
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                File.Create(saveFile.FileName).Close();
+                graphics = new GdiPlusBitmapGraphics(panel1);
+                graphics.Export(shapes, saveFile.FileName);
+            }
+        }
+
+        private void JpegToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = GetUrl();
+            saveFile.FileName = ".jpeg";
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 File.Create(saveFile.FileName).Close();
