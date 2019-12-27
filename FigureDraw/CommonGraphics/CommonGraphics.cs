@@ -9,6 +9,7 @@ namespace FigureDraw
 {
     public abstract class CommonGraphics
     {
+        public virtual void DrawPoint(int x, int y) { }
         public virtual void DrawLine(int x1, int y1, int x2, int y2) { }
         public virtual void DrawRectangle(int x1, int y1, int x2, int y2) { }
         public virtual void DrawEllipse(int x1, int y1, int x2, int y2) { }

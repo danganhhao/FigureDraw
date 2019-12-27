@@ -42,15 +42,15 @@
             this.shadowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hightLightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.clear = new System.Windows.Forms.Button();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitmapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gifToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jpegToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.clear = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -124,20 +124,23 @@
             // flowchartToolStripMenuItem
             // 
             this.flowchartToolStripMenuItem.Name = "flowchartToolStripMenuItem";
-            this.flowchartToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.flowchartToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.flowchartToolStripMenuItem.Text = "Flowchart";
+            this.flowchartToolStripMenuItem.Click += new System.EventHandler(this.FlowchartToolStripMenuItem_Click);
             // 
             // dataFlowDiagramToolStripMenuItem
             // 
             this.dataFlowDiagramToolStripMenuItem.Name = "dataFlowDiagramToolStripMenuItem";
-            this.dataFlowDiagramToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.dataFlowDiagramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dataFlowDiagramToolStripMenuItem.Text = "Data Flow Diagram";
+            this.dataFlowDiagramToolStripMenuItem.Click += new System.EventHandler(this.DataFlowDiagramToolStripMenuItem_Click);
             // 
             // activityDiagramToolStripMenuItem
             // 
             this.activityDiagramToolStripMenuItem.Name = "activityDiagramToolStripMenuItem";
-            this.activityDiagramToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.activityDiagramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.activityDiagramToolStripMenuItem.Text = "Activity Diagram";
+            this.activityDiagramToolStripMenuItem.Click += new System.EventHandler(this.ActivityDiagramToolStripMenuItem_Click);
             // 
             // effectToolStripMenuItem
             // 
@@ -160,12 +163,53 @@
             this.hightLightToolStripMenuItem.Name = "hightLightToolStripMenuItem";
             this.hightLightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hightLightToolStripMenuItem.Text = "HightLight";
+            this.hightLightToolStripMenuItem.Click += new System.EventHandler(this.HightLightToolStripMenuItem_Click);
             // 
             // borderToolStripMenuItem
             // 
             this.borderToolStripMenuItem.Name = "borderToolStripMenuItem";
             this.borderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.borderToolStripMenuItem.Text = "Border";
+            this.borderToolStripMenuItem.Click += new System.EventHandler(this.BorderToolStripMenuItem_Click);
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bitmapToolStripMenuItem,
+            this.pngToolStripMenuItem,
+            this.gifToolStripMenuItem,
+            this.jpegToolStripMenuItem});
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.exportToolStripMenuItem.Text = "Export";
+            // 
+            // bitmapToolStripMenuItem
+            // 
+            this.bitmapToolStripMenuItem.Name = "bitmapToolStripMenuItem";
+            this.bitmapToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.bitmapToolStripMenuItem.Text = "Bitmap";
+            this.bitmapToolStripMenuItem.Click += new System.EventHandler(this.BitmapToolStripMenuItem_Click);
+            // 
+            // pngToolStripMenuItem
+            // 
+            this.pngToolStripMenuItem.Name = "pngToolStripMenuItem";
+            this.pngToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.pngToolStripMenuItem.Text = "Png";
+            this.pngToolStripMenuItem.Click += new System.EventHandler(this.PngToolStripMenuItem_Click);
+            // 
+            // gifToolStripMenuItem
+            // 
+            this.gifToolStripMenuItem.Name = "gifToolStripMenuItem";
+            this.gifToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.gifToolStripMenuItem.Text = "Gif";
+            this.gifToolStripMenuItem.Click += new System.EventHandler(this.GifToolStripMenuItem_Click);
+            // 
+            // jpegToolStripMenuItem
+            // 
+            this.jpegToolStripMenuItem.Name = "jpegToolStripMenuItem";
+            this.jpegToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.jpegToolStripMenuItem.Text = "Jpeg";
+            this.jpegToolStripMenuItem.Click += new System.EventHandler(this.JpegToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -209,45 +253,6 @@
             this.clear.Text = "Clear";
             this.clear.UseVisualStyleBackColor = true;
             this.clear.Click += new System.EventHandler(this.Clear_Click);
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bitmapToolStripMenuItem,
-            this.pngToolStripMenuItem,
-            this.gifToolStripMenuItem,
-            this.jpegToolStripMenuItem});
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.exportToolStripMenuItem.Text = "Export";
-            // 
-            // bitmapToolStripMenuItem
-            // 
-            this.bitmapToolStripMenuItem.Name = "bitmapToolStripMenuItem";
-            this.bitmapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bitmapToolStripMenuItem.Text = "Bitmap";
-            this.bitmapToolStripMenuItem.Click += new System.EventHandler(this.BitmapToolStripMenuItem_Click);
-            // 
-            // pngToolStripMenuItem
-            // 
-            this.pngToolStripMenuItem.Name = "pngToolStripMenuItem";
-            this.pngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pngToolStripMenuItem.Text = "Png";
-            this.pngToolStripMenuItem.Click += new System.EventHandler(this.PngToolStripMenuItem_Click);
-            // 
-            // gifToolStripMenuItem
-            // 
-            this.gifToolStripMenuItem.Name = "gifToolStripMenuItem";
-            this.gifToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gifToolStripMenuItem.Text = "Gif";
-            this.gifToolStripMenuItem.Click += new System.EventHandler(this.GifToolStripMenuItem_Click);
-            // 
-            // jpegToolStripMenuItem
-            // 
-            this.jpegToolStripMenuItem.Name = "jpegToolStripMenuItem";
-            this.jpegToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.jpegToolStripMenuItem.Text = "Jpeg";
-            this.jpegToolStripMenuItem.Click += new System.EventHandler(this.JpegToolStripMenuItem_Click);
             // 
             // Form1
             // 

@@ -7,18 +7,15 @@ using FigureDraw.Shapes;
 
 namespace FigureDraw.Effect
 {
-    abstract class ShapeEffect : Shape
+    class HightLightEffect : ShapeEffect
     {
-        protected Shape shape;
-
-        public ShapeEffect(Shape shape)
+        public HightLightEffect(Shape shape) : base(shape)
         {
-            this.shape = shape;
         }
 
         public override void Draw(CommonGraphics g)
         {
-            shape.Draw(g);
+            base.Draw(g);
         }
     }
 }

@@ -81,6 +81,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Effect\BorderEffect.cs" />
+    <Compile Include="Effect\HightLightEffect.cs" />
     <Compile Include="Effect\ShapeEffect.cs" />
     <Compile Include="Shapes\Ellipse.cs" />
     <Compile Include="Shapes\Line.cs" />

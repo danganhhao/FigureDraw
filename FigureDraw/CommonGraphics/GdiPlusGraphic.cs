@@ -18,6 +18,11 @@ namespace FigureDraw
             g = control.CreateGraphics();
         }
 
+        public override void DrawPoint(int x, int y)
+        {
+            g.FillEllipse(new SolidBrush(Color.Blue), x - 3, y - 3, 6, 6);
+        }
+
         public override void DrawArc(int x, int y, int width, int height, float startAngle, float sweepAngle)
         {
             width = width == 0 ? 1 : width;
