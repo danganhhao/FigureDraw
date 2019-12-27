@@ -14,5 +14,6 @@ namespace FigureDraw
         void DrawText(int x, int y, string text, float size);
         void DrawFillEllipse(int x1, int y1, int x2, int y2);
         void DrawRoundedRectangle(int x1, int y1, int x2, int y2, int radius);
+        void DrawArc(int x, int y, int width, int height, float startAngle, float sweepAngle);
     }
 }

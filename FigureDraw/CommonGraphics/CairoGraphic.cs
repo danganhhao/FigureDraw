@@ -8,6 +8,10 @@ namespace FigureDraw
 {
     class CairoGraphic: CommonGraphics
     {
+        public void DrawArc(int x, int y, int width, int height, float startAngle, float sweepAngle)
+        {
+        }
+
         //Context c;
 
         //public CairoGraphic(Context c)

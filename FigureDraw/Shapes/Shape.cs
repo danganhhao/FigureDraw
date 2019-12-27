@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FigureDraw
+namespace FigureDraw.Shapes
 {
-    abstract class Sharp
+    abstract class Shape
     {
-        public SharpInfo sharpInfo;
+        public ShapeInfo shapeInfo;
         public virtual void Draw(CommonGraphics g) { }
     }
 }

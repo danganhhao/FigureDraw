@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FigureDraw.Diagram;
+using FigureDraw.Shapes;
 
 namespace FigureDraw
 {
@@ -24,7 +25,7 @@ namespace FigureDraw
     {
         System.Drawing.Graphics g;
         CommonGraphics graphics;
-        List<Sharp> shapes = new List<Sharp>();
+        List<Shape> shapes = new List<Shape>();
         ShapeMode shapeMode;
         bool isDrawing = false;
 
@@ -46,9 +47,9 @@ namespace FigureDraw
             //Sharp a = new FcOutputBlock(10, 10, 150, 75);
             //Sharp a = new DfdInputBlock(10, 10, 150, 75);
             //Sharp a = new AdProcessBlock(10, 10, 150, 75);
-            MyDiagram diagram = new MyDiagram(new AdFactory());
-            diagram.CreateDiagram();
-            diagram.Draw(graphics);
+            //MyDiagram diagram = new MyDiagram(new AdFactory());
+            //diagram.CreateDiagram();
+            //diagram.Draw(graphics);
 
 
 
@@ -80,15 +81,15 @@ namespace FigureDraw
             switch (shapeMode)
             {
                 case ShapeMode.Line:
-                    Sharp line = new AdTransferBlock(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
+                    Shape line = new FcStartBlock(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
                     shapes.Add(line);
                     break;
                 case ShapeMode.Rectangle:
-                    Sharp rectangle = new Rectangle(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
+                    Shape rectangle = new FigureDraw.Shapes.Rectangle(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
                     shapes.Add(rectangle);
                     break;
                 case ShapeMode.Ellipse:
-                    Sharp ellipse = new Ellipse(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
+                    Shape ellipse = new FigureDraw.Shapes.Ellipse(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
                     shapes.Add(ellipse);
                     break;
             }
@@ -103,7 +104,7 @@ namespace FigureDraw
                 for (int i = 0; i < shapes.Count; i++)
                 {
                     if (i == shapes.Count - 1)
-                        shapes[i].sharpInfo.point2 = new MyPoint(e.Location.X, e.Location.Y);
+                        shapes[i].shapeInfo.point2 = new FigureDraw.Shapes.MyPoint(e.Location.X, e.Location.Y);
                 }
                 panel1.Invalidate();
             }
@@ -116,7 +117,7 @@ namespace FigureDraw
             {
                 if (i == shapes.Count - 1)
                 {
-                    shapes[i].sharpInfo.point2 = new MyPoint(e.Location.X, e.Location.Y);
+                    shapes[i].shapeInfo.point2 = new FigureDraw.Shapes.MyPoint(e.Location.X, e.Location.Y);
                 }
             }
             panel1.Invalidate();

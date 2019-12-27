@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FigureDraw.Shapes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,39 +9,39 @@ namespace FigureDraw.Diagram
 {
     class AdFactory: DiagramFactory
     {
-        public override EndBlock CreateEndBlock(SharpInfo sharpInfo)
+        public override EndBlock CreateEndBlock(ShapeInfo shapeInfo)
         {
-            return new AdEndBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new AdEndBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override InputBlock CreateInputBlock(SharpInfo sharpInfo)
+        public override InputBlock CreateInputBlock(ShapeInfo shapeInfo)
         {
-            return new AdInputBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new AdInputBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override OutputBlock CreateOutputBlock(SharpInfo sharpInfo)
+        public override OutputBlock CreateOutputBlock(ShapeInfo shapeInfo)
         {
-            return new AdOutputBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new AdOutputBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override ProcessBlock CreateProcessBlock(SharpInfo sharpInfo)
+        public override ProcessBlock CreateProcessBlock(ShapeInfo shapeInfo)
         {
-            return new AdProcessBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new AdProcessBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override StartBlock CreateStartBlock(SharpInfo sharpInfo)
+        public override StartBlock CreateStartBlock(ShapeInfo shapeInfo)
         {
-            return new AdStartBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new AdStartBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override TransferBlock CreateTransferBlock(SharpInfo sharpInfo)
+        public override TransferBlock CreateTransferBlock(ShapeInfo shapeInfo)
         {
-            return new AdTransferBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new AdTransferBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override ValidateBlock CreateValidateBlock(SharpInfo sharpInfo)
+        public override ValidateBlock CreateValidateBlock(ShapeInfo shapeInfo)
         {
-            return new AdValidateBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new AdValidateBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
     }
 }

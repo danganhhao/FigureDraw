@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FigureDraw.Shapes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,39 +9,39 @@ namespace FigureDraw.Diagram
 {
     class DfdFactory : DiagramFactory
     {
-        public override EndBlock CreateEndBlock(SharpInfo sharpInfo)
+        public override EndBlock CreateEndBlock(ShapeInfo shapeInfo)
         {
-            return new DfdEndBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new DfdEndBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override InputBlock CreateInputBlock(SharpInfo sharpInfo)
+        public override InputBlock CreateInputBlock(ShapeInfo shapeInfo)
         {
-            return new DfdInputBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new DfdInputBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override OutputBlock CreateOutputBlock(SharpInfo sharpInfo)
+        public override OutputBlock CreateOutputBlock(ShapeInfo shapeInfo)
         {
-            return new DfdOutputBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new DfdOutputBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override ProcessBlock CreateProcessBlock(SharpInfo sharpInfo)
+        public override ProcessBlock CreateProcessBlock(ShapeInfo shapeInfo)
         {
-            return new DfdProcessBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new DfdProcessBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override StartBlock CreateStartBlock(SharpInfo sharpInfo)
+        public override StartBlock CreateStartBlock(ShapeInfo shapeInfo)
         {
-            return new DfdStartBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new DfdStartBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override TransferBlock CreateTransferBlock(SharpInfo sharpInfo)
+        public override TransferBlock CreateTransferBlock(ShapeInfo shapeInfo)
         {
-            return new DfdTransferBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new DfdTransferBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override ValidateBlock CreateValidateBlock(SharpInfo sharpInfo)
+        public override ValidateBlock CreateValidateBlock(ShapeInfo shapeInfo)
         {
-            return base.CreateValidateBlock(sharpInfo);
+            return base.CreateValidateBlock(shapeInfo);
         }
     }
 }

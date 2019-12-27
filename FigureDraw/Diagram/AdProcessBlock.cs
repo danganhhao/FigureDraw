@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FigureDraw.Shapes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,12 @@ namespace FigureDraw.Diagram
     {
         public AdProcessBlock(int x1, int y1, int x2, int y2)
         {
-            sharpInfo = new SharpInfo(new MyPoint(x1, y1), new MyPoint(x2, y2));
+            shapeInfo = new ShapeInfo(new MyPoint(x1, y1), new MyPoint(x2, y2));
         }
 
         public override void Draw(CommonGraphics g)
         {
-            g.DrawRoundedRectangle(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y, 1);
+            g.DrawRoundedRectangle(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y, 1);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FigureDraw.Shapes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,13 +9,13 @@ namespace FigureDraw.Diagram
 {
     abstract class DiagramFactory
     {
-        public virtual StartBlock CreateStartBlock(SharpInfo sharpInfo){ return null; }
-        public virtual InputBlock CreateInputBlock(SharpInfo sharpInfo) { return null; }
-        public virtual ProcessBlock CreateProcessBlock(SharpInfo sharpInfo) { return null; }
-        public virtual OutputBlock CreateOutputBlock(SharpInfo sharpInfo) { return null; }
-        public virtual TransferBlock CreateTransferBlock(SharpInfo sharpInfo) { return null; }
-        public virtual ValidateBlock CreateValidateBlock(SharpInfo sharpInfo) { return null; }
-        public virtual EndBlock CreateEndBlock(SharpInfo sharpInfo) { return null; }
+        public virtual StartBlock CreateStartBlock(ShapeInfo sharpInfo){ return null; }
+        public virtual InputBlock CreateInputBlock(ShapeInfo sharpInfo) { return null; }
+        public virtual ProcessBlock CreateProcessBlock(ShapeInfo sharpInfo) { return null; }
+        public virtual OutputBlock CreateOutputBlock(ShapeInfo sharpInfo) { return null; }
+        public virtual TransferBlock CreateTransferBlock(ShapeInfo sharpInfo) { return null; }
+        public virtual ValidateBlock CreateValidateBlock(ShapeInfo sharpInfo) { return null; }
+        public virtual EndBlock CreateEndBlock(ShapeInfo sharpInfo) { return null; }
 
     }
 }

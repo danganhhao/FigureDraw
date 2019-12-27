@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FigureDraw.Shapes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,16 +11,16 @@ namespace FigureDraw.Diagram
     {
         public FcInputBlock(int x1, int y1, int x2, int y2)
         {
-            sharpInfo = new SharpInfo(new MyPoint(x1, y1), new MyPoint(x2, y2));
+            shapeInfo = new ShapeInfo(new MyPoint(x1, y1), new MyPoint(x2, y2));
         }
 
         public override void Draw(CommonGraphics g)
         {
-            int temp = (int)(Math.Abs(sharpInfo.point1.x - sharpInfo.point2.x) * 0.1);
-            g.DrawLine(sharpInfo.point1.x + temp, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point1.y);
-            g.DrawLine(sharpInfo.point2.x, sharpInfo.point1.y, sharpInfo.point2.x - temp, sharpInfo.point2.y);
-            g.DrawLine(sharpInfo.point1.x, sharpInfo.point2.y, sharpInfo.point2.x - temp, sharpInfo.point2.y);
-            g.DrawLine(sharpInfo.point1.x + temp, sharpInfo.point1.y, sharpInfo.point1.x, sharpInfo.point2.y);
+            int temp = (int)(Math.Abs(shapeInfo.point1.x - shapeInfo.point2.x) * 0.1);
+            g.DrawLine(shapeInfo.point1.x + temp, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point1.y);
+            g.DrawLine(shapeInfo.point2.x, shapeInfo.point1.y, shapeInfo.point2.x - temp, shapeInfo.point2.y);
+            g.DrawLine(shapeInfo.point1.x, shapeInfo.point2.y, shapeInfo.point2.x - temp, shapeInfo.point2.y);
+            g.DrawLine(shapeInfo.point1.x + temp, shapeInfo.point1.y, shapeInfo.point1.x, shapeInfo.point2.y);
 
 
         }

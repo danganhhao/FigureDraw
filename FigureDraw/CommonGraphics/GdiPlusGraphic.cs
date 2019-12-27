@@ -18,6 +18,14 @@ namespace FigureDraw
             g = control.CreateGraphics();
         }
 
+        public void DrawArc(int x, int y, int width, int height, float startAngle, float sweepAngle)
+        {
+            width = width == 0 ? 1 : width;
+            height = height == 0 ? 1 : height; 
+            g.DrawArc(new Pen(Color.Black), x, y, width, height, startAngle, sweepAngle);
+
+        }
+
         public void DrawEllipse(int x1, int y1, int x2, int y2)
         {
             g.DrawEllipse(new Pen(Color.Black), x1, y1, (int)Math.Abs(x2 - x1), (int)Math.Abs(y2 - y1));
@@ -69,7 +77,6 @@ namespace FigureDraw
             g.DrawString(text, drawFont, drawBrush, x, y, drawFormat);
             drawFont.Dispose();
             drawBrush.Dispose();
-            g.Dispose();
         }
 
         /*

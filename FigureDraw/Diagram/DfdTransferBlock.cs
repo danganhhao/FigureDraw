@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FigureDraw.Shapes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,24 +11,31 @@ namespace FigureDraw.Diagram
     {
         public DfdTransferBlock(int x1, int y1, int x2, int y2)
         {
-            sharpInfo = new SharpInfo(new MyPoint(x1, y1), new MyPoint(x2, y2));
+            shapeInfo = new ShapeInfo(new MyPoint(x1, y1), new MyPoint(x2, y2));
         }
 
         public override void Draw(CommonGraphics g)
         {
-            MyPoint midpoint = new MyPoint(0, 0);
-            MyPoint p2 = new MyPoint(0, 0);
-            MyPoint p4 = new MyPoint(0, 0);
-            MyPoint p5 = new MyPoint(0, 0);
+            g.DrawArc(shapeInfo.point1.x, shapeInfo.point1.y, (int)(Math.Abs(shapeInfo.point1.x - shapeInfo.point2.x)), (int)(Math.Abs(shapeInfo.point1.y - shapeInfo.point2.y)), 180, 180);
 
-            int x2 = (int)(sharpInfo.point2.x + Math.Abs(Math.Cos(45) * 10));
-            int y2 = (int)(sharpInfo.point2.y + Math.Abs(Math.Sin(45) * 10));
-            p2.x = x2; p2.y = y2;
+            int tempy2 = shapeInfo.point2.y - (int)(Math.Abs(shapeInfo.point1.y - shapeInfo.point2.y) / 2);
+            int tempx1 = shapeInfo.point2.x + 5;
+            int tempy1 = shapeInfo.point1.y;
+            float m = shapeInfo.point2.x - tempx1 == 0 ? 0 : (tempy2 - tempy1) / (shapeInfo.point2.x - tempx1);
 
-            g.DrawLine(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
-            g.DrawLine(sharpInfo.point2.x, sharpInfo.point2.y, p2.x, p2.y);
-            //g.DrawLine(sharpInfo.point2.x, sharpInfo.point2.y, p5.x, p5.y);
-            //g.DrawLine(p3.x, p3.y, p4.x, p4.y);
+            double degree = Math.Atan(m);
+            double toLeft = shapeInfo.point2.x > tempx1 ? 0 : Math.PI;
+            double degree1 = degree + 5 * Math.PI / 6 + toLeft;
+            double degree2 = degree + 7 * Math.PI / 6 + toLeft;
+
+            int px1 = (int)(shapeInfo.point2.x + Math.Cos(degree1) * 10);
+            int py1 = (int)(tempy2 + Math.Sin(degree1) * 10);
+
+            int px2 = (int)(shapeInfo.point2.x + Math.Cos(degree2) * 10);
+            int py2 = (int)(tempy2 + Math.Sin(degree2) * 10);
+
+            g.DrawLine(shapeInfo.point2.x, tempy2, px1, py1);
+            g.DrawLine(shapeInfo.point2.x, tempy2, px2, py2);
         }
     }
 }

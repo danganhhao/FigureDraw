@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FigureDraw
+namespace FigureDraw.Shapes
 {
     class MyPoint
     {
@@ -17,12 +17,12 @@ namespace FigureDraw
             this.y = y;
         }
     }
-    class SharpInfo
+    class ShapeInfo
     {
         public MyPoint point1;
         public MyPoint point2;
 
-        public SharpInfo(MyPoint point1, MyPoint point2)
+        public ShapeInfo(MyPoint point1, MyPoint point2)
         {
             this.point1 = point1;
             this.point2 = point2;

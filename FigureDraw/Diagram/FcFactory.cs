@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FigureDraw.Shapes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,39 +9,39 @@ namespace FigureDraw.Diagram
 {
     class FcFactory : DiagramFactory
     {
-        public override EndBlock CreateEndBlock(SharpInfo sharpInfo)
+        public override EndBlock CreateEndBlock(ShapeInfo shapeInfo)
         {
-            return new FcEndBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new FcEndBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override InputBlock CreateInputBlock(SharpInfo sharpInfo)
+        public override InputBlock CreateInputBlock(ShapeInfo shapeInfo)
         {
-            return new FcInputBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new FcInputBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override OutputBlock CreateOutputBlock(SharpInfo sharpInfo)
+        public override OutputBlock CreateOutputBlock(ShapeInfo shapeInfo)
         {
-            return new FcOutputBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new FcOutputBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override ProcessBlock CreateProcessBlock(SharpInfo sharpInfo)
+        public override ProcessBlock CreateProcessBlock(ShapeInfo shapeInfo)
         {
-            return new FcProcessBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new FcProcessBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override StartBlock CreateStartBlock(SharpInfo sharpInfo)
+        public override StartBlock CreateStartBlock(ShapeInfo shapeInfo)
         {
-            return new FcStartBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new FcStartBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override TransferBlock CreateTransferBlock(SharpInfo sharpInfo)
+        public override TransferBlock CreateTransferBlock(ShapeInfo shapeInfo)
         {
-            return new FcTransferBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new FcTransferBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
 
-        public override ValidateBlock CreateValidateBlock(SharpInfo sharpInfo)
+        public override ValidateBlock CreateValidateBlock(ShapeInfo shapeInfo)
         {
-            return new FcValidateBlock(sharpInfo.point1.x, sharpInfo.point1.y, sharpInfo.point2.x, sharpInfo.point2.y);
+            return new FcValidateBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
     }
 }
