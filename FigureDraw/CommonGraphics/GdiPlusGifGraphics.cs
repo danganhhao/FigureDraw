@@ -15,7 +15,7 @@ namespace FigureDraw
     {
         Bitmap bitmap;
 
-        public GdiPlusGifGraphics(Control control) : base(control)
+        public GdiPlusGifGraphics(Control control, PaintEventArgs e) : base(control, e)
         {
             bitmap = new Bitmap(control.ClientSize.Width, control.ClientSize.Height);
         }

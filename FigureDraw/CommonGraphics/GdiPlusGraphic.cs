@@ -13,9 +13,9 @@ namespace FigureDraw
     {
         public Graphics g;
 
-        public GdiPlusGraphic(Control control)
+        public GdiPlusGraphic(Control control, PaintEventArgs e)
         {
-            g = control.CreateGraphics();
+            g = e.Graphics;
         }
 
         public override void DrawPoint(int x, int y)
@@ -81,6 +81,28 @@ namespace FigureDraw
             g.DrawString(text, drawFont, drawBrush, x, y, drawFormat);
             drawFont.Dispose();
             drawBrush.Dispose();
+        }
+
+        public override void DrawLineBrush(int x1, int y1, int x2, int y2, int width)
+        {
+            g.DrawLine(new Pen(Color.Gray, width), x1, y1, x2, y2);
+        }
+
+        public override void DrawRectangleBrush(int x1, int y1, int x2, int y2, int width)
+        {
+            g.DrawRectangle(new Pen(Color.Gray, width), x1, y1, (int)Math.Abs(x2 - x1), (int)Math.Abs(y2 - y1));
+        }
+
+        public override void DrawEllipseBrush(int x1, int y1, int x2, int y2, int width)
+        {
+            g.DrawEllipse(new Pen(Color.Gray, width), x1, y1, (int)Math.Abs(x2 - x1), (int)Math.Abs(y2 - y1));
+        }
+
+        public override void DrawArcBrush(int x, int y, int width, int height, float startAngle, float sweepAngle, int brushWidth)
+        {
+            width = width == 0 ? 1 : width;
+            height = height == 0 ? 1 : height;
+            g.DrawArc(new Pen(Color.Gray, brushWidth), x, y, width, height, startAngle, sweepAngle);
         }
     }
 }

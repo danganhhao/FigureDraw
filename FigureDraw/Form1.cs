@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using FigureDraw.Diagram;
 using FigureDraw.Effect;
 using FigureDraw.Shapes;
-
+using Cairo;
 
 namespace FigureDraw
 {
@@ -34,24 +34,31 @@ namespace FigureDraw
 
     public partial class Form1 : Form
     {
-        Graphics g;
+        
         CommonGraphics graphics;
         List<Shape> shapes = new List<Shape>();
         Dictionary<Shape, Shape> shapeEffects = new Dictionary<Shape, Shape>();
         ShapeMode shapeMode;
         Mode mode;
         bool isDrawing = false;
+        PaintEventArgs paintEventArgs;
 
         public Form1()
         {
             InitializeComponent();
         }
 
+        public static void SetDoubleBuffering(System.Windows.Forms.Control control, bool value)
+        {
+            System.Reflection.PropertyInfo controlProperty = typeof(System.Windows.Forms.Control)
+                .GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            controlProperty.SetValue(control, value, null);
+        }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
-            g = e.Graphics;
-            graphics = new GdiPlusGraphic(panel1);
+            paintEventArgs = e;
+            graphics = new GdiPlusGraphic(panel1, e);
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             for (int i = 0; i < shapes.Count; i++)
             {
@@ -67,7 +74,7 @@ namespace FigureDraw
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            SetDoubleBuffering(panel1, true);
         }
 
         private void LineToolStripMenuItem_Click(object sender, EventArgs e)
@@ -181,7 +188,7 @@ namespace FigureDraw
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 File.Create(saveFile.FileName).Close();
-                graphics = new GdiPlusBitmapGraphics(panel1);
+                graphics = new GdiPlusBitmapGraphics(panel1, paintEventArgs);
                 graphics.Export(shapes, saveFile.FileName);
             }
         }
@@ -193,7 +200,7 @@ namespace FigureDraw
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 File.Create(saveFile.FileName).Close();
-                graphics = new GdiPlusPngGraphics(panel1);
+                graphics = new GdiPlusPngGraphics(panel1, paintEventArgs);
                 graphics.Export(shapes, saveFile.FileName);
             }
         }
@@ -205,7 +212,7 @@ namespace FigureDraw
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 File.Create(saveFile.FileName).Close();
-                graphics = new GdiPlusBitmapGraphics(panel1);
+                graphics = new GdiPlusBitmapGraphics(panel1, paintEventArgs);
                 graphics.Export(shapes, saveFile.FileName);
             }
         }
@@ -217,7 +224,7 @@ namespace FigureDraw
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 File.Create(saveFile.FileName).Close();
-                graphics = new GdiPlusBitmapGraphics(panel1);
+                graphics = new GdiPlusBitmapGraphics(panel1, paintEventArgs);
                 graphics.Export(shapes, saveFile.FileName);
             }
         }

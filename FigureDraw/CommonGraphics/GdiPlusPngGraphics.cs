@@ -14,10 +14,9 @@ namespace FigureDraw
     {
         Bitmap bitmap;
 
-        public GdiPlusPngGraphics(Control control) : base(control)
+        public GdiPlusPngGraphics(Control control, PaintEventArgs e) : base(control, e)
         {
             bitmap = new Bitmap(control.ClientSize.Width, control.ClientSize.Height);
-
         }
 
         public override void Export(List<Shape> shapes, string url)

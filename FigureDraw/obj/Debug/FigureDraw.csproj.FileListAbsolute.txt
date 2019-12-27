@@ -30,3 +30,5 @@ E:\Data\Information of Technology\2019-2020\DesignPatternOOP\BaiTapDoHoa\FigureD
 E:\Data\Information of Technology\2019-2020\DesignPatternOOP\BaiTapDoHoa\FigureDraw\obj\Debug\FigureDraw.csproj.CoreCompileInputs.cache
 E:\Data\Information of Technology\2019-2020\DesignPatternOOP\BaiTapDoHoa\FigureDraw\obj\Debug\FigureDraw.exe
 E:\Data\Information of Technology\2019-2020\DesignPatternOOP\BaiTapDoHoa\FigureDraw\obj\Debug\FigureDraw.pdb
+E:\Data\Information of Technology\2019-2020\DesignPatternOOP\BaiTapDoHoa\FigureDraw\bin\Debug\Mono.Cairo.dll
+E:\Data\Information of Technology\2019-2020\DesignPatternOOP\BaiTapDoHoa\FigureDraw\obj\Debug\FigureDraw.csproj.CopyComplete

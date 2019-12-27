@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FigureDraw.Shapes;
 
@@ -14,10 +10,9 @@ namespace FigureDraw
     {
         Bitmap bitmap;
         
-        public GdiPlusBitmapGraphics(Control control) : base(control)
+        public GdiPlusBitmapGraphics(Control control, PaintEventArgs e) : base(control, e)
         {
             bitmap = new Bitmap(control.ClientSize.Width, control.ClientSize.Height);
-            
         }
 
         public override void Export(List<Shape> shapes, string url)

@@ -124,21 +124,21 @@
             // flowchartToolStripMenuItem
             // 
             this.flowchartToolStripMenuItem.Name = "flowchartToolStripMenuItem";
-            this.flowchartToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.flowchartToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.flowchartToolStripMenuItem.Text = "Flowchart";
             this.flowchartToolStripMenuItem.Click += new System.EventHandler(this.FlowchartToolStripMenuItem_Click);
             // 
             // dataFlowDiagramToolStripMenuItem
             // 
             this.dataFlowDiagramToolStripMenuItem.Name = "dataFlowDiagramToolStripMenuItem";
-            this.dataFlowDiagramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dataFlowDiagramToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.dataFlowDiagramToolStripMenuItem.Text = "Data Flow Diagram";
             this.dataFlowDiagramToolStripMenuItem.Click += new System.EventHandler(this.DataFlowDiagramToolStripMenuItem_Click);
             // 
             // activityDiagramToolStripMenuItem
             // 
             this.activityDiagramToolStripMenuItem.Name = "activityDiagramToolStripMenuItem";
-            this.activityDiagramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.activityDiagramToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.activityDiagramToolStripMenuItem.Text = "Activity Diagram";
             this.activityDiagramToolStripMenuItem.Click += new System.EventHandler(this.ActivityDiagramToolStripMenuItem_Click);
             // 
@@ -155,20 +155,20 @@
             // shadowToolStripMenuItem
             // 
             this.shadowToolStripMenuItem.Name = "shadowToolStripMenuItem";
-            this.shadowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shadowToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.shadowToolStripMenuItem.Text = "Shadow";
             // 
             // hightLightToolStripMenuItem
             // 
             this.hightLightToolStripMenuItem.Name = "hightLightToolStripMenuItem";
-            this.hightLightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hightLightToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.hightLightToolStripMenuItem.Text = "HightLight";
             this.hightLightToolStripMenuItem.Click += new System.EventHandler(this.HightLightToolStripMenuItem_Click);
             // 
             // borderToolStripMenuItem
             // 
             this.borderToolStripMenuItem.Name = "borderToolStripMenuItem";
-            this.borderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borderToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.borderToolStripMenuItem.Text = "Border";
             this.borderToolStripMenuItem.Click += new System.EventHandler(this.BorderToolStripMenuItem_Click);
             // 
@@ -263,7 +263,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";

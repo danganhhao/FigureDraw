@@ -15,7 +15,6 @@ namespace FigureDraw.Effect
 
         public override void Draw(CommonGraphics g)
         {
-            base.Draw(g);
         }
     }
 }

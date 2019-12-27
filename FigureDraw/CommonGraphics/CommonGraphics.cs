@@ -17,6 +17,10 @@ namespace FigureDraw
         public virtual void DrawFillEllipse(int x1, int y1, int x2, int y2) { }
         public virtual void DrawRoundedRectangle(int x1, int y1, int x2, int y2, int radius) { }
         public virtual void DrawArc(int x, int y, int width, int height, float startAngle, float sweepAngle) { }
+        public virtual void DrawLineBrush(int x1, int y1, int x2, int y2, int width) { }
+        public virtual void DrawRectangleBrush(int x1, int y1, int x2, int y2, int width) { }
+        public virtual void DrawEllipseBrush(int x1, int y1, int x2, int y2, int width) { }
+        public virtual void DrawArcBrush(int x, int y, int width, int height, float startAngle, float sweepAngle, int brushWidth) { }
         public virtual void Export(List<Shape> shapes, string url) { }
     }
 }
