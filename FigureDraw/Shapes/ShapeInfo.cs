@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FigureDraw.Shapes
 {
-    class MyPoint
+    public class MyPoint
     {
         public int x;
         public int y;
@@ -17,7 +17,7 @@ namespace FigureDraw.Shapes
             this.y = y;
         }
     }
-    class ShapeInfo
+    public class ShapeInfo
     {
         public MyPoint point1;
         public MyPoint point2;

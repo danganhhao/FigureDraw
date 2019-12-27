@@ -8,10 +8,6 @@ namespace FigureDraw
 {
     class CairoGraphic: CommonGraphics
     {
-        public void DrawArc(int x, int y, int width, int height, float startAngle, float sweepAngle)
-        {
-        }
-
         //Context c;
 
         //public CairoGraphic(Context c)
@@ -19,37 +15,39 @@ namespace FigureDraw
         //    this.c = c;
         //}
 
-        public void DrawEllipse(int x1, int y1, int x2, int y2)
+        public override void DrawArc(int x, int y, int width, int height, float startAngle, float sweepAngle)
         {
-            //c.Scale(double width, double height);
-            //c.Arc(double x, double y, double radius, double angle1, double angle2);
-            //c.Stroke();
+            base.DrawArc(x, y, width, height, startAngle, sweepAngle);
         }
 
-        public void DrawFillEllipse(int x1, int y1, int x2, int y2)
+        public override void DrawEllipse(int x1, int y1, int x2, int y2)
         {
+            base.DrawEllipse(x1, y1, x2, y2);
         }
 
-        public void DrawLine(int x1, int y1, int x2, int y2)
+        public override void DrawFillEllipse(int x1, int y1, int x2, int y2)
         {
-            //c.MoveTo(x1, y1);
-            //c.LineTo(y2, y2);
-            //c.Stroke();
+            base.DrawFillEllipse(x1, y1, x2, y2);
         }
 
-        public void DrawRectangle(int x1, int y1, int x2, int y2)
+        public override void DrawLine(int x1, int y1, int x2, int y2)
         {
-            //c.Rectangle(x1, y1, (double)Math.Abs(x2 - x1), (double)Math.Abs(y2 - y1));
-            //c.Stroke();
+            base.DrawLine(x1, y1, x2, y2);
         }
 
-        public void DrawRoundedRectangle(int x1, int y1, int x2, int y2, int radius)
+        public override void DrawRectangle(int x1, int y1, int x2, int y2)
         {
-            
+            base.DrawRectangle(x1, y1, x2, y2);
         }
 
-        public void DrawText(int x, int y, string text, float size)
+        public override void DrawRoundedRectangle(int x1, int y1, int x2, int y2, int radius)
         {
+            base.DrawRoundedRectangle(x1, y1, x2, y2, radius);
+        }
+
+        public override void DrawText(int x, int y, string text, float size)
+        {
+            base.DrawText(x, y, text, size);
         }
     }
 }

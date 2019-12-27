@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FigureDraw.Shapes
 {
-    abstract class Shape
+    public abstract class Shape
     {
         public ShapeInfo shapeInfo;
         public virtual void Draw(CommonGraphics g) { }

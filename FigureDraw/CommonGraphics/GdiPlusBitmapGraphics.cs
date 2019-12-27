@@ -1,40 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FigureDraw.Shapes;
 
 namespace FigureDraw
 {
     class GdiPlusBitmapGraphics : GdiPlusGraphic
     {
+        Bitmap bitmap;
+        
         public GdiPlusBitmapGraphics(Control control) : base(control)
         {
+            bitmap = new Bitmap(control.ClientSize.Width, control.ClientSize.Height);
+            
         }
 
-        public void Save(string url)
+        public override void Export(List<Shape> shapes, string url)
         {
-            //Bitmap bmp1 = new Bitmap(typeof(Button), "Button.bmp");
-
-            //// Save the image as a GIF.
-            //bmp1.Save("c:\\button.gif", System.Drawing.Imaging.ImageFormat.Gif);
-
-            //// Construct a new image from the GIF file.
-            //Bitmap bmp2 = new Bitmap("c:\\button.gif");
-
-            //// Draw the two images.
-            //e.Graphics.DrawImage(bmp1, new Point(10, 10));
-            //e.Graphics.DrawImage(bmp2, new Point(10, 40));
-
-            //// Dispose of the image files.
-            //bmp1.Dispose();
-            //bmp2.Dispose();
-            Bitmap bmp = new Bitmap("AA");
-            //g.DrawImage(bmp, new Point(10, 10));
-            bmp.Save(url, System.Drawing.Imaging.ImageFormat.Bmp);
-            bmp.Dispose();
+            g = Graphics.FromImage(bitmap);
+            g.Clear(Color.White);
+            for (int i = 0; i < shapes.Count; i++)
+                shapes[i].Draw(this);
+            bitmap.Save(url, ImageFormat.Bmp);
         }
     }
 }
