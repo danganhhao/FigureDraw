@@ -48,7 +48,7 @@ namespace FigureDraw
             InitializeComponent();
         }
 
-        public static void SetDoubleBuffering(System.Windows.Forms.Control control, bool value)
+        public static void SetDoubleBuffering(Control control, bool value)
         {
             System.Reflection.PropertyInfo controlProperty = typeof(System.Windows.Forms.Control)
                 .GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
@@ -68,8 +68,6 @@ namespace FigureDraw
                     shapeEffects[shapes[i]].Draw(graphics);
                 }
             }
-            //a.Draw(new GdiPlusBitmapGraphics(g));
-            //a.Draw(new CairoGraphic(new Context(new Win32Surface(g.GetHdc()))));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -250,10 +248,10 @@ namespace FigureDraw
         {
             foreach (Shape s in shapes)
             {
-                Shape borderLine = new BorderEffect(s);
+                Shape hightlight = new HightLightEffect(s);
                 if (!shapeEffects.ContainsKey(s))
                 {
-                    shapeEffects.Add(s, borderLine);
+                    shapeEffects.Add(s, hightlight);
                 }
             }
             panel1.Invalidate();

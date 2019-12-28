@@ -15,6 +15,7 @@ namespace FigureDraw.Effect
 
         public override void Draw(CommonGraphics g)
         {
+            shape.DrawWithBrush(g);
         }
     }
 }

@@ -21,6 +21,12 @@ namespace FigureDraw.Shapes
         {
             g.DrawLine(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
+
+        public override void DrawWithBrush(CommonGraphics g)
+        {
+            g.DrawLineBrush(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y, 3);
+        }
+
         public override void UpdateShapeInfo(int x1, int y1, int x2, int y2)
         {
             shapeInfo.point1.x = x1; shapeInfo.point1.y = y1;
