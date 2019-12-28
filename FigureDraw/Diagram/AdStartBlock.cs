@@ -1,6 +1,7 @@
 ﻿using FigureDraw.Shapes;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace FigureDraw.Diagram
 
         public override void Draw(CommonGraphics g)
         {
-            g.DrawFillEllipse(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
+            g.DrawFillEllipse(Color.Black, shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
         }
     }
 }

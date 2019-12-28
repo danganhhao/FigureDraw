@@ -13,12 +13,20 @@ namespace FigureDraw
     {
         Context c;
         System.Drawing.Graphics g;
-        public CairoGraphic(Control control)
+        public CairoGraphic(Control control, PaintEventArgs e)
         {
-            g = control.CreateGraphics();
+            g = e.Graphics;
             Surface s = new Win32Surface(g.GetHdc());
             c = new Context(s);
         }
+
+        public override void DrawLine(int x1, int y1, int x2, int y2)
+        {
+            c.MoveTo(x1, y1);
+            c.LineTo(x2, y2);
+            c.Stroke();
+        }
+
         public override void DrawArc(int x, int y, int width, int height, float startAngle, float sweepAngle)
         {
             base.DrawArc(x, y, width, height, startAngle, sweepAngle);
@@ -27,18 +35,6 @@ namespace FigureDraw
         public override void DrawEllipse(int x1, int y1, int x2, int y2)
         {
             base.DrawEllipse(x1, y1, x2, y2);
-        }
-
-        public override void DrawFillEllipse(int x1, int y1, int x2, int y2)
-        {
-            base.DrawFillEllipse(x1, y1, x2, y2);
-        }
-
-        public override void DrawLine(int x1, int y1, int x2, int y2)
-        {
-            c.MoveTo(x1, y1);
-            c.LineTo(x2, y2);
-            c.Stroke();
         }
 
         public override void DrawPoint(int x, int y)

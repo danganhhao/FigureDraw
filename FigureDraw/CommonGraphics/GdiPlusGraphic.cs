@@ -35,9 +35,14 @@ namespace FigureDraw
             g.DrawEllipse(new Pen(Color.Black), x1, y1, (int)Math.Abs(x2 - x1), (int)Math.Abs(y2 - y1));
         }
 
-        public override void DrawFillEllipse(int x1, int y1, int x2, int y2)
+        public override void DrawFillEllipse(Color c, int x1, int y1, int x2, int y2)
         {
-            g.FillEllipse(new SolidBrush(Color.Black), x1, y1, (int)Math.Abs(x2 - x1), (int)Math.Abs(y2 - y1));
+            g.FillEllipse(new SolidBrush(c), x1, y1, (int)Math.Abs(x2 - x1), (int)Math.Abs(y2 - y1));
+        }
+
+        public override void DrawFillRectangle(Color c, int x1, int y1, int x2, int y2)
+        {
+            g.FillRectangle(new SolidBrush(c), x1, y1, (int)Math.Abs(x2 - x1), (int)Math.Abs(y2 - y1));
         }
 
         public override void DrawLine(int x1, int y1, int x2, int y2)

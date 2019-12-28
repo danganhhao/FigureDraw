@@ -12,7 +12,6 @@ using System.Windows.Forms;
 using FigureDraw.Diagram;
 using FigureDraw.Effect;
 using FigureDraw.Shapes;
-using Cairo;
 
 namespace FigureDraw
 {
@@ -50,7 +49,7 @@ namespace FigureDraw
 
         public static void SetDoubleBuffering(Control control, bool value)
         {
-            System.Reflection.PropertyInfo controlProperty = typeof(System.Windows.Forms.Control)
+            System.Reflection.PropertyInfo controlProperty = typeof(Control)
                 .GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             controlProperty.SetValue(control, value, null);
         }
@@ -191,7 +190,7 @@ namespace FigureDraw
             {
                 File.Create(saveFile.FileName).Close();
                 graphics = new GdiPlusBitmapGraphics(panel1, paintEventArgs);
-                graphics.Export(shapes, saveFile.FileName);
+                graphics.Export(MergeShapeAndEffect(), saveFile.FileName);
             }
         }
 
@@ -203,7 +202,7 @@ namespace FigureDraw
             {
                 File.Create(saveFile.FileName).Close();
                 graphics = new GdiPlusPngGraphics(panel1, paintEventArgs);
-                graphics.Export(shapes, saveFile.FileName);
+                graphics.Export(MergeShapeAndEffect(), saveFile.FileName);
             }
         }
 
@@ -215,7 +214,7 @@ namespace FigureDraw
             {
                 File.Create(saveFile.FileName).Close();
                 graphics = new GdiPlusBitmapGraphics(panel1, paintEventArgs);
-                graphics.Export(shapes, saveFile.FileName);
+                graphics.Export(MergeShapeAndEffect(), saveFile.FileName);
             }
         }
 
@@ -227,7 +226,7 @@ namespace FigureDraw
             {
                 File.Create(saveFile.FileName).Close();
                 graphics = new GdiPlusBitmapGraphics(panel1, paintEventArgs);
-                graphics.Export(shapes, saveFile.FileName);
+                graphics.Export(MergeShapeAndEffect(), saveFile.FileName);
             }
         }
 
@@ -239,6 +238,18 @@ namespace FigureDraw
                 if (!shapeEffects.ContainsKey(s))
                 {
                     shapeEffects.Add(s, borderLine);
+                }
+            }
+            panel1.Invalidate();
+        }
+        private void ShadowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Shape s in shapes)
+            {
+                Shape shadow = new ShadowEffect(s);
+                if (!shapeEffects.ContainsKey(s))
+                {
+                    shapeEffects.Add(s, shadow);
                 }
             }
             panel1.Invalidate();
@@ -277,5 +288,20 @@ namespace FigureDraw
             shapeMode = ShapeMode.AdDiagram;
             Clear_Click(sender, e);
         }
+
+        private List<Shape> MergeShapeAndEffect()
+        {
+            List<Shape> temp = new List<Shape>();
+            for (int i = 0; i< shapes.Count; i++)
+            {
+                temp.Add(shapes[i]);
+                if (shapeEffects.ContainsKey(shapes[i]))
+                {
+                    temp.Add(shapeEffects[shapes[i]]);
+                }
+            }
+            return temp;
+        }
+       
     }
 }

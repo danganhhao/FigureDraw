@@ -155,20 +155,21 @@
             // shadowToolStripMenuItem
             // 
             this.shadowToolStripMenuItem.Name = "shadowToolStripMenuItem";
-            this.shadowToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.shadowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shadowToolStripMenuItem.Text = "Shadow";
+            this.shadowToolStripMenuItem.Click += new System.EventHandler(this.ShadowToolStripMenuItem_Click);
             // 
             // hightLightToolStripMenuItem
             // 
             this.hightLightToolStripMenuItem.Name = "hightLightToolStripMenuItem";
-            this.hightLightToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.hightLightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hightLightToolStripMenuItem.Text = "HightLight";
             this.hightLightToolStripMenuItem.Click += new System.EventHandler(this.HightLightToolStripMenuItem_Click);
             // 
             // borderToolStripMenuItem
             // 
             this.borderToolStripMenuItem.Name = "borderToolStripMenuItem";
-            this.borderToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.borderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.borderToolStripMenuItem.Text = "Border";
             this.borderToolStripMenuItem.Click += new System.EventHandler(this.BorderToolStripMenuItem_Click);
             // 
@@ -236,6 +237,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(6, 19);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(47, 17);

@@ -33,9 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mono.Cairo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Unity Full v3.5\Mono.Cairo.dll</HintPath>
+    <Reference Include="CairoSharp, Version=3.22.25.56, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CairoSharp.3.22.25.56\lib\netstandard2.0\CairoSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -86,6 +85,7 @@
     </Compile>
     <Compile Include="Effect\BorderEffect.cs" />
     <Compile Include="Effect\HightLightEffect.cs" />
+    <Compile Include="Effect\ShadowEffect.cs" />
     <Compile Include="Effect\ShapeEffect.cs" />
     <Compile Include="Shapes\Ellipse.cs" />
     <Compile Include="Shapes\Line.cs" />
@@ -121,6 +121,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

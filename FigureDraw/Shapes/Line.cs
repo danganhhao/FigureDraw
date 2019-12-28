@@ -27,6 +27,12 @@ namespace FigureDraw.Shapes
             g.DrawLineBrush(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y, 3);
         }
 
+        public override void DrawShadow(CommonGraphics g)
+        {
+            g.DrawLineBrush(shapeInfo.point1.x + 2, shapeInfo.point1.y + 2, shapeInfo.point2.x + 2, shapeInfo.point2.y + 2, 2);
+            g.DrawLineBrush(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y, 1);
+        }
+
         public override void UpdateShapeInfo(int x1, int y1, int x2, int y2)
         {
             shapeInfo.point1.x = x1; shapeInfo.point1.y = y1;
