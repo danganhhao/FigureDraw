@@ -26,7 +26,7 @@ namespace FigureDraw.Diagram
 
         public override ProcessBlock CreateProcessBlock(ShapeInfo shapeInfo)
         {
-            return new AdProcessBlock(shapeInfo.point1.x, shapeInfo.point1.y, shapeInfo.point2.x, shapeInfo.point2.y);
+            return new AdProcessBlock(shapeInfo.point1.x, shapeInfo.point1.y, (int)(shapeInfo.point2.x* (1.0/8)), (int)(shapeInfo.point2.y * (1.0/4)));
         }
 
         public override StartBlock CreateStartBlock(ShapeInfo shapeInfo)

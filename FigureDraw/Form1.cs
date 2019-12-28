@@ -118,19 +118,20 @@ namespace FigureDraw
             {
                 switch (shapeMode)
                 {
-                    case ShapeMode.Line:
-                        Shape line = new Line(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
-                        shapes.Add(line);
+                    case ShapeMode.FcDiagram:
+                        MyDiagram diagramFc = new MyDiagram(new FcFactory());
+                        diagramFc.CreateDiagram();
+                        shapes.Add(diagramFc);
                         break;
-                    case ShapeMode.Rectangle:
-                        Shape rectangle = new Shapes.Rectangle(e.Location.X, e.Location.Y, e.Location.X, e.Location.Y);
-                        shapes.Add(rectangle);
+                    case ShapeMode.DfdDiagram:
+                        MyDiagram diagramDfd = new MyDiagram(new DfdFactory());
+                        diagramDfd.CreateDiagram();
+                        shapes.Add(diagramDfd);
                         break;
                     case ShapeMode.AdDiagram:
-                        MyDiagram diagram = new MyDiagram(new AdFactory());
-                        diagram.CreateDiagram();
-                        shapes.Add(diagram);
-                        //diagram.Draw(graphics);
+                        MyDiagram diagramAd = new MyDiagram(new AdFactory());
+                        diagramAd.CreateDiagram();
+                        shapes.Add(diagramAd);
                         break;
                 }
             }
@@ -143,7 +144,10 @@ namespace FigureDraw
                 for (int i = 0; i < shapes.Count; i++)
                 {
                     if (i == shapes.Count - 1)
-                        shapes[i].shapeInfo.point2 = new MyPoint(e.Location.X, e.Location.Y);
+                    {
+                        shapes[i].UpdateShapeInfo(shapes[i].shapeInfo.point1.x, shapes[i].shapeInfo.point1.y,
+                                                    e.Location.X, e.Location.Y);
+                    }
                 }
                 panel1.Invalidate();
             }
@@ -259,18 +263,21 @@ namespace FigureDraw
         {
             mode = Mode.Diagram;
             shapeMode = ShapeMode.FcDiagram;
+            Clear_Click(sender, e);
         }
 
         private void DataFlowDiagramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mode = Mode.Diagram;
             shapeMode = ShapeMode.DfdDiagram;
+            Clear_Click(sender, e);
         }
 
         private void ActivityDiagramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mode = Mode.Diagram;
             shapeMode = ShapeMode.AdDiagram;
+            Clear_Click(sender, e);
         }
     }
 }
